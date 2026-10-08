@@ -170,3 +170,47 @@ export const featureReverse = style({
     },
   },
 });
+
+export const bottomBannerContainer = style({
+  display: 'flex',
+  alignItems: 'flex-end',
+  minHeight: '540px',
+  backgroundColor: '#CFE5FF',
+  lineHeight: '0',
+});
+
+export const bottomBannerContent = style({
+  margin: '0 auto',
+  display: 'flex',
+  alignItems: 'center',
+  '@media': {
+    [`screen and (max-width: ${TABLET_MAX_WIDTH})`]: {
+      flexDirection: 'column',
+      gap: '217px',
+    },
+    [`screen and (max-width: ${MOBILE_MAX_WIDTH})`]: {
+      gap: '130px',
+    },
+  },
+});
+
+export const bottomBannerDesc = style({
+  fontSize: '40px',
+  fontWeight: typographyTokens.fontWeight.bold,
+  color: colorTokens.secondary.gray700,
+  lineHeight: '1.4',
+  '@media': {
+    [`screen and (max-width: ${TABLET_MAX_WIDTH})`]: {
+      marginTop: '200px',
+      textAlign: 'center',
+    },
+    [`screen and (max-width: ${MOBILE_MAX_WIDTH})`]: {
+      fontSize: typographyTokens.fontSize['3xl'],
+    },
+  },
+});
+
+export const bottomBannerImg = style({
+  width: '100%',
+  height: 'auto',
+});

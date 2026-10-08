@@ -1,3 +1,4 @@
+import imgHomeBottom from '@/assets/landing/img_home_bottom.svg';
 import imgHomeTop from '@/assets/landing/img_home_top.svg';
 
 import imgHome01 from '@/assets/landing/img_home_01.svg';
@@ -27,7 +28,7 @@ export default function Home() {
           <Image
             className={styles.topBannerImg}
             src={imgHomeTop}
-            alt="탑 배너"
+            alt="탑 배너 이미지"
           />
         </div>
       </section>
@@ -103,7 +104,16 @@ export default function Home() {
         </section>
       </section>
       {/* 바텀배너 */}
-      <section></section>
+      <section className={styles.bottomBannerContainer}>
+        <div className={styles.bottomBannerContent}>
+          <p className={styles.bottomBannerDesc}>
+            믿을 수 있는
+            <br />
+            판다마켓 중고 거래
+          </p>
+          <Image className={styles.bottomBannerImg} src={imgHomeBottom} alt="바텀 배너 이미지" />
+        </div>
+      </section>
     </article>
   );
 }
