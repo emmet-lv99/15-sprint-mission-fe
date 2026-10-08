@@ -68,3 +68,6 @@ export const typographyTokens = createGlobalTheme(':root', {
     regular: '400',
   },
 });
+
+export const TABLET_MAX_WIDTH = '744px';
+export const MOBILE_MAX_WIDTH = '375px';

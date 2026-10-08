@@ -1,3 +1,4 @@
+import GlobalLayout from '@/components/layout/GlobalLayout';
 import '@/styles/reset.css.js';
 import '@/styles/tokens.css.js';
 import localFont from 'next/font/local';
@@ -17,7 +18,9 @@ const pretendard = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="ko" className={pretendard.variable}>
-      <body className={pretendard.className}>{children}</body>
+      <body className={pretendard.className}>
+        <GlobalLayout>{children}</GlobalLayout>
+      </body>
     </html>
   );
 }
