@@ -6,13 +6,15 @@ import {
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
-  margin: '0 24px',
+  padding: '0 24px',
+  borderBottom: '1px solid #dfdfdf',
   '@media': {
-    [`screen and (max-width: ${MOBILE_MAX_WIDTH})`]: { margin: '0 16px' },
+    [`screen and (max-width: ${MOBILE_MAX_WIDTH})`]: { padding: '0 16px' },
   },
 });
 
 export const wrapper = style({
+  margin: '0 auto',
   maxWidth: '1520px',
   height: '70px',
   display: 'flex',

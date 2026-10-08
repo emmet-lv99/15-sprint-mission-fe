@@ -19,6 +19,7 @@ export const content = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+  margin: '0 auto',
   '@media': {
     [`screen and (max-width: ${MOBILE_MAX_WIDTH})`]: {
       display: 'grid',

@@ -11,7 +11,7 @@ import * as styles from './Navigation.css';
 
 function Navigation() {
   const pathname = usePathname();
-  const isBoard = pathname.includes('/board');
+  const isBoard = pathname.includes('/boards');
   const isItems = pathname.includes('/items');
 
   return (
@@ -30,7 +30,7 @@ function Navigation() {
             <div>
               <Link
                 className={clsx(styles.menuBoard, isBoard && styles.activeMenu)}
-                href={'/board'}
+                href={'/boards'}
               >
                 자유게시판
               </Link>
