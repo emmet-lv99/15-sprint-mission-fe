@@ -1,0 +1,74 @@
+import { colorTokens, typographyTokens } from '@/styles/tokens.css';
+import { style } from '@vanilla-extract/css';
+
+export const container = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '16px',
+  padding: '0 24px 16px',
+  backgroundColor: colorTokens.secondary.gray50,
+  borderRadius: '8px',
+  textDecoration: 'none',
+  color: 'inherit',
+});
+
+export const label = style({
+  display: 'flex',
+  alignItems: 'center',
+  alignSelf: 'flex-start',
+  gap: '4px',
+  padding: '2px 24px 2px',
+  backgroundColor: colorTokens.primary[100],
+  borderRadius: '0 0 16px 16px',
+  fontSize: typographyTokens.fontSize.lg,
+  fontWeight: typographyTokens.fontWeight.semibold,
+  lineHeight: '1.666666',
+  color: '#fff',
+});
+
+export const content = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '18px',
+});
+
+export const itemInfoContent = style({
+  display: 'flex',
+  gap: '8px',
+  alignItems: 'center',
+});
+
+export const itemTitle = style({
+  fontSize: typographyTokens.fontSize.xl,
+  fontWeight: typographyTokens.fontWeight.semibold,
+  lineHeight: '1.6',
+  color: colorTokens.secondary.gray800,
+});
+
+export const articleInfoContent = style({
+  display: 'flex',
+  justifyContent: 'space-between',
+});
+
+export const articleInfoUser = style({
+  display: 'flex',
+  gap: '8px',
+});
+
+export const articleInfoUserName = style({
+  fontSize: typographyTokens.fontSize.md,
+  color: colorTokens.secondary.gray600,
+});
+
+export const articleInfoLikeContainer = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '4px',
+  fontSize: typographyTokens.fontSize.md,
+  color: colorTokens.secondary.gray500,
+});
+
+export const articleInfoDate = style({
+  fontSize: typographyTokens.fontSize.md,
+  color: colorTokens.secondary.gray400,
+});
