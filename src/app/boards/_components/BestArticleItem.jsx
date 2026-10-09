@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as styles from './BestArticleItem.css';
 
-function BestArticleItem() {
+function BestArticleItem({ id, title, content, createdAt }) {
   return (
     <Link href={''} className={styles.container}>
       {/* 라벨 */}
@@ -17,15 +17,9 @@ function BestArticleItem() {
       <div className={styles.content}>
         {/* 아이템 정보 */}
         <div className={styles.itemInfoContent}>
-          <p className={styles.itemTitle}>
-            맥북 16인치 16기가 1테라 정도 사양이면 얼마에 팔아야하나요?
-          </p>
-          <div className={styles.itemImgContainer}>
-            <Image
-              className={styles.itemImg}
-              src={boardsItemDummy}
-              alt="게시글 이미지"
-            />
+          <p className={styles.itemTitle}>{title}</p>
+          <div>
+            <Image src={boardsItemDummy} alt="게시글 이미지" />
           </div>
         </div>
         {/* 아티클 정보 */}
@@ -39,7 +33,7 @@ function BestArticleItem() {
             </div>
           </div>
           {/* 작성일 */}
-          <p className={styles.articleInfoDate}>2024. 04. 16</p>
+          <p className={styles.articleInfoDate}>{createdAt}</p>
         </div>
       </div>
     </Link>
