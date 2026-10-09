@@ -1,3 +1,5 @@
+'use client';
+
 import BestArticleList from './_components/BestArticleList';
 import * as styles from './page.css';
 
