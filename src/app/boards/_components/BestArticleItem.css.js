@@ -1,15 +1,26 @@
-import { colorTokens, typographyTokens } from '@/styles/tokens.css';
+import {
+  colorTokens,
+  TABLET_MAX_WIDTH,
+  typographyTokens,
+} from '@/styles/tokens.css';
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
+  flexBasis: '384px',
+  flexShrink: '0',
   gap: '16px',
   padding: '0 24px 16px',
   backgroundColor: colorTokens.secondary.gray50,
   borderRadius: '8px',
   textDecoration: 'none',
   color: 'inherit',
+  '@media': {
+    [`screen and (max-width: ${TABLET_MAX_WIDTH})`]: {
+      flexBasis: '340px',
+    },
+  },
 });
 
 export const label = style({
@@ -30,12 +41,22 @@ export const content = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '18px',
+  '@media': {
+    [`screen and (max-width: ${TABLET_MAX_WIDTH})`]: {
+      gap: '40px',
+    },
+  },
 });
 
 export const itemInfoContent = style({
   display: 'flex',
   gap: '8px',
   alignItems: 'center',
+  '@media': {
+    [`screen and (max-width: ${TABLET_MAX_WIDTH})`]: {
+      gap: '40px',
+    },
+  },
 });
 
 export const itemTitle = style({
@@ -43,6 +64,11 @@ export const itemTitle = style({
   fontWeight: typographyTokens.fontWeight.semibold,
   lineHeight: '1.6',
   color: colorTokens.secondary.gray800,
+  '@media': {
+    [`screen and (max-width: ${TABLET_MAX_WIDTH})`]: {
+      fontSize: typographyTokens.fontSize['2lg'],
+    },
+  },
 });
 
 export const articleInfoContent = style({
