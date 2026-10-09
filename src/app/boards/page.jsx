@@ -1,20 +1,24 @@
-'use client';
-
-import BestArticleList from './_components/BestArticleList';
+import Link from 'next/link';
+import ArticleListSection from './_components/ArticleListSection/ArticleListSection';
+import BestArticleList from './_components/BestArticles/BestArticleList';
 import * as styles from './page.css';
 
 function BoardListPage() {
   return (
     <article className={styles.container}>
       <div className={styles.content}>
-        <section>
+        <section className={styles.bestArticleSection}>
           <h2 className={styles.sectionTitle}>베스트 게시글</h2>
-          <div className={styles.bestArticleListContainer}>
-            <BestArticleList />
-          </div>
+          <BestArticleList />
         </section>
-        <section>
-          <h2 className={styles.sectionTitle}>게시글</h2>
+        <section className={styles.articleListSection}>
+          <div className={styles.articleListSectionHeader}>
+            <h2 className={styles.sectionTitle}>게시글</h2>
+            <Link className={styles.articleWriteBtn} href={''}>
+              글쓰기
+            </Link>
+          </div>
+          <ArticleListSection />
         </section>
       </div>
     </article>

@@ -1,5 +1,6 @@
 export const queryKeys = {
   articles: {
-    bestArticles: () => ['bestArticles'],
+    bestArticles: () => ['article', 'best'],
+    list: (queryParams) => ['article', 'list', queryParams],
   },
 };

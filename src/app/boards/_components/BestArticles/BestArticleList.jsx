@@ -12,7 +12,7 @@ const queryParams = {
 };
 
 function BestArticleList() {
-  const { data: articles, isPending, error } = useQuery({
+  const { data, isPending, error } = useQuery({
     queryKey: queryKeys.articles.bestArticles(),
     queryFn: () => fetchArticles(queryParams),
   });
@@ -25,12 +25,18 @@ function BestArticleList() {
     return <div>베스트 게시글을 불러오는데 실패했습니다.</div>;
   }
 
+  const articles = data?.data.list || [];
+
+  if (articles.length === 0) {
+    return <div>등록된 게시글이 없습니다.</div>;
+  }
+
   return (
-    <div className={styles.container}>
-      {articles.data.list.map((article) => (
+    <section className={styles.container}>
+      {articles.map((article) => (
         <BestArticleItem key={article.id} {...article} />
       ))}
-    </div>
+    </section>
   );
 }
 

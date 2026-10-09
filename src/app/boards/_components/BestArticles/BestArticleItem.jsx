@@ -7,7 +7,7 @@ import * as styles from './BestArticleItem.css';
 
 function BestArticleItem({ id, title, content, createdAt }) {
   return (
-    <Link href={''} className={styles.container}>
+    <Link href={`/boards/${id}`} className={styles.container}>
       {/* 라벨 */}
       <div className={styles.label}>
         <Image src={icMedal} alt="베스트 라벨 아이콘" />
