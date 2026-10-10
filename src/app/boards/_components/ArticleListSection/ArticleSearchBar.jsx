@@ -29,7 +29,7 @@ function ArticleSearchBar() {
         return;
       }
       const params = new URLSearchParams(searchParams.toString());
-      if (keyword.trim()) {
+      if (trimmedKeyword) {
         params.set('search', trimmedKeyword);
       } else {
         params.delete('search');

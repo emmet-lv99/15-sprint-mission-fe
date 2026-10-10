@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useSearchParams } from 'next/navigation';
 import ArticleItem from './ArticleItem';
 import * as styles from './ArticleList.css';
+import ArticlePagination from './ArticlePagination';
 
 function ArticleList() {
   const searchParams = useSearchParams();
@@ -37,11 +38,14 @@ function ArticleList() {
   }
 
   return (
-    <section>
+    <section className={styles.container}>
       <div className={styles.articleItemList}>
         {articles.map((article) => (
           <ArticleItem key={article.id} {...article} />
         ))}
+      </div>
+      <div className={styles.articlePagination}>
+        <ArticlePagination totalPages={data.data.totalPages} />
       </div>
     </section>
   );
