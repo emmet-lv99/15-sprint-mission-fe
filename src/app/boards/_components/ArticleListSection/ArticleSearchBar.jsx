@@ -9,17 +9,32 @@ import * as styles from './ArticleSearchBar.css';
 function ArticleSearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [keyword, setKeyword] = useState(searchParams.get('search') || '');
+  const searchParamValue = searchParams.get('search') || '';
+
+  const [keyword, setKeyword] = useState(searchParamValue);
+
+  const [prevSearchParam, setPrevSearchParam] = useState(searchParamValue);
+  if (searchParamValue !== prevSearchParam) {
+    setPrevSearchParam(searchParamValue);
+    setKeyword(searchParamValue);
+  }
 
   const handleSearchKeyword = (event) => {
     if (event.key === 'Enter') {
-      // 기존의 키워드와 같으면 얼리 return
-      if (searchParams.get('search') === keyword) {
+      const trimmedKeyword = keyword.trim();
+      if (
+        searchParams.get('search') === trimmedKeyword ||
+        trimmedKeyword.length === 0
+      ) {
         return;
       }
       const params = new URLSearchParams(searchParams.toString());
-      params.set('search', keyword);
-      params.set('page', 1);
+      if (keyword.trim()) {
+        params.set('search', trimmedKeyword);
+      } else {
+        params.delete('search');
+      }
+      params.set('page', '1');
       router.push(`/boards?${params.toString()}`);
     }
   };
