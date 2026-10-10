@@ -50,6 +50,7 @@ export const content = style({
 
 export const itemInfoContent = style({
   display: 'flex',
+  justifyContent: 'space-between',
   gap: '8px',
   alignItems: 'center',
   '@media': {
