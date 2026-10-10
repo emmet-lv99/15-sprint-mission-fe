@@ -22,3 +22,16 @@ export const fetchArticles = async (params = {}) => {
 
   return response.json();
 };
+
+export const createArticle = async (newArticle) => {
+  const response = await fetch(`${BASE_URL}/api/articles`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newArticle),
+  });
+
+  if (!response.ok) {
+    throw new Error('게시글 등록 실패');
+  }
+  return response.json();
+};

@@ -14,7 +14,7 @@ function BoardListPage() {
         <section className={styles.articleListSection}>
           <div className={styles.articleListSectionHeader}>
             <h2 className={styles.sectionTitle}>게시글</h2>
-            <Link className={styles.articleWriteBtn} href={''}>
+            <Link className={styles.articleWriteBtn} href={'/boards/create'}>
               글쓰기
             </Link>
           </div>
