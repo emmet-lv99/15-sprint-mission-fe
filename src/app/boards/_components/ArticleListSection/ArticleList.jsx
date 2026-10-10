@@ -14,7 +14,7 @@ function ArticleList() {
     page: Number(searchParams.get('page')) || 1,
     pageSize: 10,
     orderBy: searchParams.get('orderBy') || 'recent',
-    keyword: searchParams.get('keyword') || '',
+    search: searchParams.get('search') || '',
   };
 
   const { data, isPending, error } = useQuery({
